@@ -18,7 +18,7 @@ main ()
 	  cout << "Enter your Guess" << endl;
 	  cin >> guess;
 	  attempts++;
-        if(guess>100 || guess<1)
+        if (guess>100 || guess<1)
         {
               cout<<"Invalid"<<endl;
         } 
