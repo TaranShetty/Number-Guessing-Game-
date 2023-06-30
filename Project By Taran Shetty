@@ -1,0 +1,47 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<time.h>
+int
+main ()
+{
+  int num, guess, attempts = 0;
+  char P;
+  srand (time (0));		//seed the random no generator
+  do
+    {
+      num = rand () % 100 + 1;	//Generate a random no from 1 to 100
+      cout << "Welcome to the Number Guessing Game " << endl;
+      cout << "I have selected a no between 1 to 100 " << endl;
+      do
+	{
+	  cout << "Enter your Guess" << endl;
+	  cin >> guess;
+	  attempts++;
+	  if (guess > num)
+	    {
+	      cout << "Too High" << endl;
+	    }
+	  else if (guess < num)
+	    {
+	      cout << "Too Low" << endl;
+	    }
+	  else
+	    {
+	      cout << "Congratulations You Won!" << endl;
+	      cout << "You have guessed the no in " << attempts <<
+		" attempts " << endl;
+	    }
+	}
+      while (num != guess);
+      cout << "Do you want to Play Again (Y/N) ?" << endl;
+      cin >> P;
+      attempts = 0;
+    }
+  while (P == 'Y' || P == 'y');
+  cout << "Thank You for Playing" << endl;
+  cout << "Goodbye!" << endl;
+
+  getch ();
+  return 0;
+}
