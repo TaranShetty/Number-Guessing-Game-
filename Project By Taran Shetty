@@ -2,12 +2,11 @@
 #include<conio.h>
 #include<stdlib.h>
 #include<time.h>
-int
-main ()
+int main()
 {
 int num, guess, attempts = 0;
 char P;
-srand (time (0));		//seed the random no generator
+srand(time (0));		//seed the random no generator
 do
 {
 num = rand () % 100 + 1;	//Generate a random no from 1 to 100
