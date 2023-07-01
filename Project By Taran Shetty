@@ -4,43 +4,50 @@
 #include<time.h>
 int main()
 {
-int num, guess, attempts = 0;
-char P;
+int random_num , guess, attempts = 0 , Maxattempts = 5 ;
+char playAgain;
 srand(time (0));		//seed the random no generator
 do
 {
-num = rand () % 100 + 1;	//Generate a random no from 1 to 100
-cout << "Welcome to the Number Guessing Game " << endl;
-cout << "I have selected a no between 1 to 100 " << endl;
+random_num = rand () % 100 + 1;	//Generate a random no from 1 to 100
+cout<< "Welcome to the Number Guessing Game " << endl;
+cout<< "I have selected a no between 1 to 100 " << endl;
 do
 {
-cout << "Enter your Guess" << endl;
+cout<< "Enter your Guess" << endl;
 cin >> guess;
 attempts++;
 if (guess>100 || guess<1)
 {
 cout<<"Invalid"<<endl;
 } 
-else if (guess > num)
+else if (guess > random_num)
 {
-cout << "Too High" << endl;
+cout<< "Too High" << endl;
 }
-else if (guess < num)
+else if (guess < random_num)
 {
-cout << "Too Low" << endl;
+cout<< "Too Low" << endl;
 }
 else
 {
-cout << "Congratulations You Won!" << endl;
-cout << "You have guessed the no in " << attempts <<" attempts " << endl;
+cout<< "Congratulations You Won!" << endl;
+cout<< "You have guessed the no in " << attempts <<" attempts " << endl;
+}
+if (attempts >= Maxattempts)
+{
+cout<< "You have reached the maximum no of attempts "<<endl;
+cout<< " The no is "<<random_num<<endl;
+cout<< "You Lose"<<endl;
+break;
 }
 }
-while (num != guess);
-cout << "Do you want to Play Again (Y/N) ?" << endl;
-cin >> P;
+while (random_num != guess);
+cout<< "Do you want to Play Again (Y/N) ?" << endl;
+cin>>playAgain;
 attempts = 0;
 }
-while (P == 'Y' || P == 'y');
+while (playAgain == 'Y' || playAgain == 'y');
 cout << "Thank You for Playing" << endl;
 cout << "Goodbye!" << endl;
 
