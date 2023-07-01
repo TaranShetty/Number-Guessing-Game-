@@ -37,7 +37,7 @@ cout<< "You have guessed the no in " << attempts <<" attempts " << endl;
 if (attempts >= Maxattempts)
 {
 cout<< "You have reached the maximum no of attempts "<<endl;
-cout<< " The no is "<<random_num<<endl;
+cout<< "The no is "<<random_num<<endl;
 cout<< "You Lose"<<endl;
 break;
 }
